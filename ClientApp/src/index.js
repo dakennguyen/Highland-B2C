@@ -11,7 +11,7 @@ b2cauth.initialize({
     applicationId: 'c21ceda9-3252-4894-83bc-4c46ee105a64',
     cacheLocation: 'sessionStorage',
     scopes: ['https://codingfreaksdaken.onmicrosoft.com/api/user_impersonation'],
-    redirectUri: 'http://localhost:3001',
+    redirectUri: 'http://localhost:3003',
     postLogoutRedirectUri: window.location.origin,
 });
 

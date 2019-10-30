@@ -19,7 +19,7 @@ const ExternalApi = () => {
         try {
             var token = sessionStorage.getItem('msal.idtoken');
             const response = await fetch(
-                "https://localhost:5001/api/SampleData/CallApi",
+                "https://localhost:5003/api/SampleData/CallApi",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

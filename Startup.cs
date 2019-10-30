@@ -41,7 +41,7 @@ namespace Highland
 
             app.UseCors(builder =>
             {
-                builder.WithOrigins("http://localhost:3001")
+                builder.WithOrigins("http://localhost:3003")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             });

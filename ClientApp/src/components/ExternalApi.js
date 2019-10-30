@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import b2cauth from 'react-azure-adb2c';
 import Auth from './Auth';
-// import Profile from './Profile';
+import Profile from './Profile';
 
 const ExternalApi = () => {
     const [showResult, setShowResult] = useState(false);
@@ -38,6 +38,7 @@ const ExternalApi = () => {
 
     return (
         <>  
+            <Profile />
             <h1>External API</h1>
             {!auth.isLoggedIn() && (<button onClick={() => loginWithRedirect()}>Login</button>)}
             {auth.isLoggedIn() && (<button onClick={() => auth.logout()}>Logout</button>)}

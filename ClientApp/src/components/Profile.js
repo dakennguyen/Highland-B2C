@@ -1,11 +1,11 @@
 import React from "react";
-import { useAuth0 } from "../react-auth0-wrapper";
+import Auth from './Auth';
 import Highlight from './Highlight';
 
 const Profile = () => {
-    const { user } = useAuth0();
+    const auth = new Auth();
     return (
-        <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
+        <Highlight>{JSON.stringify(auth.decodedToken(), null, 2)}</Highlight>
     );
 }
 

@@ -3,11 +3,9 @@ import decodeJWT from 'jwt-decode';
 
 class Auth {
     isLoggedIn() {
-        // if (b2cauth.getAccessToken()) {
-        if (sessionStorage.getItem('msal.idtoken')) {
+        if (this.getToken()) {
             return true;
         }
-
         return false;
     }
 
@@ -16,19 +14,13 @@ class Auth {
     }
 
     getToken() {
-        return b2cauth.getAccessToken();
+        return sessionStorage.getItem('msal.idtoken'); 
     }
 
-    currentUser() {
-        const decoded = decodeJWT(b2cauth.getAccessToken());
-        return {
-            name: decoded.name,
-            firstName: decoded.given_name,
-            lastName: decoded.family_name,
-            emails: decoded.emails,
-            city: decoded.city,
-            country: decoded.country,
-        };
+    decodedToken() {
+        var token = this.getToken();
+        if (!token) return;
+        return decodeJWT(token);
     }
 }
 

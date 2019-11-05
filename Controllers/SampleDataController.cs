@@ -22,7 +22,7 @@ namespace Highland.Controllers
             var rng = new Random();
             return new Dictionary<int, string>
             {
-                {1, "Called from Highland server " + rng.Next(0, 100)}
+                {1, "Called from Highland-B2C server " + rng.Next(0, 100)}
             };
         }
 
